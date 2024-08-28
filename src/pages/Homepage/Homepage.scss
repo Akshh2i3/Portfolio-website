@@ -1,0 +1,102 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .image {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin-top: 70px;
+    transition: all 0.2s;
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    p {
+      font-size: 20px;
+      font-weight: 500;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .details {
+      font-weight: 400;
+      margin: 16px;
+    }
+
+    .name {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a,
+    Link {
+      font-weight: 600;
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .moving {
+      width: 100%;
+      display: block; /* Ensure it's visible when below 400px */
+    }
+  }
+  
+  @media (min-width: 501px) {
+    .moving {
+      display: none; /* Hide it when the screen size is above 400px */
+    }
+  }
+  
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 48px;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    p {
+      font-size: 16px;
+    }
+    .moving {
+      width: 360px;
+    }
+  }
+
+  @media (max-width: 40px) {
+    h1 {
+      font-size: 40px;
+    }
+  }
+}
