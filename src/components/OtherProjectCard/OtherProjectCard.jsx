@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./OtherProjectCard.scss";
 import { AiOutlineFolder, AiOutlineGithub } from "react-icons/ai";
 import { BiLinkExternal } from "react-icons/bi";
 import { motion } from "framer-motion";
 
 const OtherProjectCard = ({ item }) => {
+
+  const [isDraggable, setIsDraggable] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDraggable(window.innerWidth >= 500);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+
+
   return (
     <motion.div
       className="otherprojects"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 1.1 }}
-      drag
+      drag={isDraggable}
       dragConstraints={{ left: -20, right: 20, top: -20, bottom: 20 }}
     >
       <AiOutlineFolder className="gradient__text icons" />
