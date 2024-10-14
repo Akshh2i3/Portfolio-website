@@ -44,3 +44,4 @@ const MajorProjectCard = ({ classNa, item }) => {
 };
 
 export default MajorProjectCard;
+
